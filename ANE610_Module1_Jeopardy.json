@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 \u2013 Module 1 (Lecture 1) Jeopardy",
+  "categories": [
+    {
+      "name": "Matter & Energy",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define matter, per lecture context.",
+          "answer": "Anything that has mass and occupies space."
+        },
+        {
+          "value": 200,
+          "clue": "Is light considered matter? Why or why not?",
+          "answer": "No; it has no mass and does not occupy space."
+        },
+        {
+          "value": 300,
+          "clue": "Name the three states of matter discussed for our purposes.",
+          "answer": "Solid, liquid, gas."
+        },
+        {
+          "value": 400,
+          "clue": "Give one example of a physical change and why it\u2019s not chemical.",
+          "answer": "Ice melting: state changes but composition (H2O) remains the same."
+        },
+        {
+          "value": 500,
+          "clue": "Differentiate physical vs chemical property with one clear example each.",
+          "answer": "Physical: density of gold; Chemical: silver reacts with nitric acid to form silver nitrate."
+        }
+      ]
+    },
+    {
+      "name": "Units & Measurement",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "What is specific gravity conceptually?",
+          "answer": "Ratio of a substance\u2019s density to the density of water (unitless)."
+        },
+        {
+          "value": 200,
+          "clue": "Which quantities are extensive vs intensive? Give one of each.",
+          "answer": "Extensive: mass/volume; Intensive: density/temperature."
+        },
+        {
+          "value": 300,
+          "clue": "Convert concept: why must temperature be in Kelvin for gas law problems?",
+          "answer": "Kelvin is an absolute scale; proportional relationships use absolute temperature."
+        },
+        {
+          "value": 400,
+          "clue": "Accuracy vs precision\u2014define briefly.",
+          "answer": "Accuracy: closeness to true value; Precision: reproducibility/consistency of measurements."
+        },
+        {
+          "value": 500,
+          "clue": "Density triangle: if mass = 25.0 g and volume = 12.5 mL, compute density.",
+          "answer": "2.00 g/mL."
+        }
+      ]
+    },
+    {
+      "name": "Math Refresher",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Order of operations mnemonic?",
+          "answer": "Parentheses/Exponents, then Multiplication/Division, then Addition/Subtraction."
+        },
+        {
+          "value": 200,
+          "clue": "Log10(1000) equals what and why?",
+          "answer": "3; 10^3 = 1000."
+        },
+        {
+          "value": 300,
+          "clue": "ln(e) equals what?",
+          "answer": "1."
+        },
+        {
+          "value": 400,
+          "clue": "Move x across a division bar changes what property?",
+          "answer": "Changes the sign of the exponent."
+        },
+        {
+          "value": 500,
+          "clue": "Solve for x: 5x^2 = 45.",
+          "answer": "x = 3 or x = -3."
+        }
+      ]
+    },
+    {
+      "name": "Atoms & Isotopes",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define atomic number (Z).",
+          "answer": "Number of protons in the nucleus."
+        },
+        {
+          "value": 200,
+          "clue": "Define mass number (A).",
+          "answer": "Total number of protons + neutrons."
+        },
+        {
+          "value": 300,
+          "clue": "Why are atomic weights on periodic table non-integers?",
+          "answer": "They are weighted averages over naturally occurring isotopes."
+        },
+        {
+          "value": 400,
+          "clue": "Electrons vs nucleus: which contributes most to atomic mass and why?",
+          "answer": "Nucleus; protons/neutrons are ~1800\u00d7 electron mass."
+        },
+        {
+          "value": 500,
+          "clue": "Define isotope and give a hydrogen example.",
+          "answer": "Same Z, different neutrons; e.g., Protium (H-1), Deuterium (H-2), Tritium (H-3)."
+        }
+      ]
+    },
+    {
+      "name": "Periodic & Bonding",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "What does the periodic law state?",
+          "answer": "Element properties are periodic functions of atomic number."
+        },
+        {
+          "value": 200,
+          "clue": "Why are noble gases unreactive?",
+          "answer": "Filled valence shells (stable octet)."
+        },
+        {
+          "value": 300,
+          "clue": "Octet rule summary?",
+          "answer": "Atoms gain/lose/share electrons to achieve 8 in valence shell."
+        },
+        {
+          "value": 400,
+          "clue": "Define valence electrons.",
+          "answer": "Electrons in the outermost shell involved in bonding."
+        },
+        {
+          "value": 500,
+          "clue": "Pauli exclusion principle in one sentence.",
+          "answer": "No two electrons in an atom can have the same set of four quantum numbers; orbitals hold max two with opposite spins."
+        }
+      ]
+    },
+    {
+      "name": "Empirical Skills",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "What does a chemical formula tell you?",
+          "answer": "Which elements are present and how many atoms of each in a unit/molecule."
+        },
+        {
+          "value": 200,
+          "clue": "Define empirical formula.",
+          "answer": "Simplest whole-number ratio of atoms in a compound."
+        },
+        {
+          "value": 300,
+          "clue": "Is NaCl a molecular formula or formula unit? Why?",
+          "answer": "Formula unit; ionic compounds form lattices, not discrete molecules."
+        },
+        {
+          "value": 400,
+          "clue": "Given glucose C6H12O6, what is its empirical formula?",
+          "answer": "CH2O."
+        },
+        {
+          "value": 500,
+          "clue": "One reason air is called a solution despite being a gas?",
+          "answer": "Homogeneous mixture of gases (solution \u2260 only liquid)."
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Foundations",
+    "clue": "Why is electron count (Z) equal to proton count in a neutral atom, and how does this relate to periodic trends?",
+    "answer": "Neutral atoms have equal protons and electrons; increasing Z adds electrons to higher energy orbitals, producing periodic trends in size and reactivity."
+  }
+}
