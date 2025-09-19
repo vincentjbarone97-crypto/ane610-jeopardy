@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 \u2013 Module 2 (Lecture 2) Jeopardy",
+  "categories": [
+    {
+      "name": "Moles & Molar Mass",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "How many particles in a mole?",
+          "answer": "6.022 \u00d7 10^23 (Avogadro\u2019s number)."
+        },
+        {
+          "value": 200,
+          "clue": "1 mol of carbon-12 has what mass?",
+          "answer": "12 g."
+        },
+        {
+          "value": 300,
+          "clue": "Define molar mass with units.",
+          "answer": "Mass per mole; g/mol."
+        },
+        {
+          "value": 400,
+          "clue": "Compute molar mass of CO2.",
+          "answer": "44.01 g/mol (12.01 + 2\u00d716.00)."
+        },
+        {
+          "value": 500,
+          "clue": "How many atoms are in 2.0 mol of O2?",
+          "answer": "2.41 \u00d7 10^24 atoms (2 mol \u00d7 6.022e23 \u00d7 2 atoms/molecule)."
+        }
+      ]
+    },
+    {
+      "name": "Formulas & Hydrates",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "What is a hydrate?",
+          "answer": "Compound containing bound water in its crystal lattice."
+        },
+        {
+          "value": 200,
+          "clue": "Name CuSO4\u00b75H2O.",
+          "answer": "Copper(II) sulfate pentahydrate."
+        },
+        {
+          "value": 300,
+          "clue": "Anhydrous vs hygroscopic?",
+          "answer": "Anhydrous has lost water; hygroscopic absorbs water (often used as desiccants)."
+        },
+        {
+          "value": 400,
+          "clue": "Molar mass of MgSO4\u00b77H2O (approx.)?",
+          "answer": "\u2248246.4 g/mol."
+        },
+        {
+          "value": 500,
+          "clue": "Explain how water of crystallization affects molar mass.",
+          "answer": "Each H2O contributes to total molar mass; hydrates weigh more than anhydrous forms."
+        }
+      ]
+    },
+    {
+      "name": "Balancing Reactions",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Law that underpins balancing equations.",
+          "answer": "Conservation of mass."
+        },
+        {
+          "value": 200,
+          "clue": "Balance: KClO3 \u2192 KClO4 + KCl (give simplest integer coefficients).",
+          "answer": "4 KClO3 \u2192 3 KClO4 + KCl."
+        },
+        {
+          "value": 300,
+          "clue": "Balance type: Fe2(SO4)3 + KOH \u2192 K2SO4 + Fe(OH)3; what\u2019s the KOH coefficient?",
+          "answer": "6 KOH (overall: Fe2(SO4)3 + 6KOH \u2192 3K2SO4 + 2Fe(OH)3)."
+        },
+        {
+          "value": 400,
+          "clue": "Photosynthesis net balance? CO2 + H2O \u2192 ?",
+          "answer": "6CO2 + 6H2O \u2192 C6H12O6 + 6O2."
+        },
+        {
+          "value": 500,
+          "clue": "Ca(OH)2 + 2 HCl \u2192 ? (total mass idea)",
+          "answer": "CaCl2 + 2 H2O; total mass of products equals total mass of reactants."
+        }
+      ]
+    },
+    {
+      "name": "Solutions & Concentrations",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define molarity (M).",
+          "answer": "Moles of solute per liter of solution."
+        },
+        {
+          "value": 200,
+          "clue": "Define molality (m).",
+          "answer": "Moles of solute per kilogram of solvent."
+        },
+        {
+          "value": 300,
+          "clue": "15% (w/v) KCl means what per 100 mL?",
+          "answer": "15 g KCl per 100 mL solution."
+        },
+        {
+          "value": 400,
+          "clue": "Dilution: 0.010 L of 1.00 M HCl diluted to 1.0 L \u2192 new molarity?",
+          "answer": "0.010 M."
+        },
+        {
+          "value": 500,
+          "clue": "How many grams KCl in 1.0 L of a 15% (w/v) solution?",
+          "answer": "150 g."
+        }
+      ]
+    },
+    {
+      "name": "Nomenclature & Ions",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Name CO.",
+          "answer": "Carbon monoxide."
+        },
+        {
+          "value": 200,
+          "clue": "Name CO2.",
+          "answer": "Carbon dioxide."
+        },
+        {
+          "value": 300,
+          "clue": "Name N2O.",
+          "answer": "Dinitrogen monoxide."
+        },
+        {
+          "value": 400,
+          "clue": "Common cation-formers among Na, Cl, Ca, F, O, Mg (select any 3).",
+          "answer": "Na, Ca, Mg commonly form cations."
+        },
+        {
+          "value": 500,
+          "clue": "O2\u2212 is called what ion?",
+          "answer": "Oxide ion."
+        }
+      ]
+    },
+    {
+      "name": "Polyatomic Practice",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "General name of CaCl2 as an ionic compound.",
+          "answer": "Calcium chloride."
+        },
+        {
+          "value": 200,
+          "clue": "Iron(II) is called what (ferrous/ferric)?",
+          "answer": "Ferrous (Fe2+)."
+        },
+        {
+          "value": 300,
+          "clue": "Match: Nitrite, Nitrate, Sulfite, Sulfate (give one formula).",
+          "answer": "Examples: NO2\u2212 (nitrite), NO3\u2212 (nitrate), SO3^2\u2212 (sulfite), SO4^2\u2212 (sulfate)."
+        },
+        {
+          "value": 400,
+          "clue": "Empirical vs molecular formula\u2014one-sentence distinction.",
+          "answer": "Empirical is simplest whole-number ratio; molecular is actual atom counts in one molecule."
+        },
+        {
+          "value": 500,
+          "clue": "Why formula units for ionic compounds?",
+          "answer": "They form extended lattices; \"units\" reflect simplest ratio of ions."
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Solutions",
+    "clue": "You dilute 25.0 mL of 4.00 M stock to a final volume of 1.00 L. What is the final molarity?",
+    "answer": "M2 = (M1V1)/V2 = (4.00\u00d70.0250)/1.00 = 0.100 M."
+  }
+}

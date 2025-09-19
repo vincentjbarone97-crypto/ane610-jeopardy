@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 \u2013 Modules 1\u20134 Master Jeopardy",
+  "categories": [
+    {
+      "name": "Matter & Energy",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define matter, per lecture context.",
+          "answer": "Anything that has mass and occupies space."
+        },
+        {
+          "value": 200,
+          "clue": "Is light considered matter? Why or why not?",
+          "answer": "No; it has no mass and does not occupy space."
+        },
+        {
+          "value": 300,
+          "clue": "Name the three states of matter discussed for our purposes.",
+          "answer": "Solid, liquid, gas."
+        },
+        {
+          "value": 400,
+          "clue": "Give one example of a physical change and why it\u2019s not chemical.",
+          "answer": "Ice melting: state changes but composition (H2O) remains the same."
+        },
+        {
+          "value": 500,
+          "clue": "Differentiate physical vs chemical property with one clear example each.",
+          "answer": "Physical: density of gold; Chemical: silver reacts with nitric acid to form silver nitrate."
+        }
+      ]
+    },
+    {
+      "name": "Moles & Molar Mass",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "How many particles in a mole?",
+          "answer": "6.022 \u00d7 10^23 (Avogadro\u2019s number)."
+        },
+        {
+          "value": 200,
+          "clue": "1 mol of carbon-12 has what mass?",
+          "answer": "12 g."
+        },
+        {
+          "value": 300,
+          "clue": "Define molar mass with units.",
+          "answer": "Mass per mole; g/mol."
+        },
+        {
+          "value": 400,
+          "clue": "Compute molar mass of CO2.",
+          "answer": "44.01 g/mol (12.01 + 2\u00d716.00)."
+        },
+        {
+          "value": 500,
+          "clue": "How many atoms are in 2.0 mol of O2?",
+          "answer": "2.41 \u00d7 10^24 atoms (2 mol \u00d7 6.022e23 \u00d7 2 atoms/molecule)."
+        }
+      ]
+    },
+    {
+      "name": "Solutions & Concentrations",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define molarity (M).",
+          "answer": "Moles of solute per liter of solution."
+        },
+        {
+          "value": 200,
+          "clue": "Define molality (m).",
+          "answer": "Moles of solute per kilogram of solvent."
+        },
+        {
+          "value": 300,
+          "clue": "15% (w/v) KCl means what per 100 mL?",
+          "answer": "15 g KCl per 100 mL solution."
+        },
+        {
+          "value": 400,
+          "clue": "Dilution: 0.010 L of 1.00 M HCl diluted to 1.0 L \u2192 new molarity?",
+          "answer": "0.010 M."
+        },
+        {
+          "value": 500,
+          "clue": "How many grams KCl in 1.0 L of a 15% (w/v) solution?",
+          "answer": "150 g."
+        }
+      ]
+    },
+    {
+      "name": "Thermodynamics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "First Law of Thermodynamics in one line.",
+          "answer": "Energy is neither created nor destroyed; only converted."
+        },
+        {
+          "value": 200,
+          "clue": "Exothermic \u0394H sign? Endothermic \u0394H sign?",
+          "answer": "Exothermic: \u0394H < 0; Endothermic: \u0394H > 0."
+        },
+        {
+          "value": 300,
+          "clue": "Define entropy (S).",
+          "answer": "Measure of disorder/randomness of a system."
+        },
+        {
+          "value": 400,
+          "clue": "Spontaneity and \u0394G\u2014state the rule.",
+          "answer": "\u0394G < 0 \u2192 spontaneous; \u0394G > 0 \u2192 nonspontaneous."
+        },
+        {
+          "value": 500,
+          "clue": "Calculate spontaneity: \u0394H = \u221211.5 kJ, \u0394S = +22 J/mol\u00b7K at 298 K.",
+          "answer": "\u0394G = \u0394H \u2212 T\u0394S \u2248 \u221211.5 kJ \u2212 (0.022 kJ/K\u00d7298 K) \u2248 \u221218.1 kJ \u2192 spontaneous."
+        }
+      ]
+    },
+    {
+      "name": "Acids & Bases",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Bronsted\u2013Lowry acid vs base?",
+          "answer": "Acid donates H+; Base accepts H+."
+        },
+        {
+          "value": 200,
+          "clue": "Define a strong acid.",
+          "answer": "Completely dissociates into ions in water."
+        },
+        {
+          "value": 300,
+          "clue": "In water at 25 \u00b0C, what is Kw?",
+          "answer": "1.0 \u00d7 10^\u221214 = [H+][OH\u2212]."
+        },
+        {
+          "value": 400,
+          "clue": "pH of solution where [H3O+] = 4.0 \u00d7 10^\u22128 M?",
+          "answer": "pH = \u2212log(4e\u22128) \u2248 7.4."
+        },
+        {
+          "value": 500,
+          "clue": "Buffer definition in one sentence.",
+          "answer": "A solution that resists large pH changes when small amounts of acid or base are added."
+        }
+      ]
+    },
+    {
+      "name": "Gas Laws \u2013 Basics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Boyle\u2019s law (variables & relation).",
+          "answer": "P \u221d 1/V at constant T and n (P1V1 = P2V2)."
+        },
+        {
+          "value": 200,
+          "clue": "Charles\u2019s law (variables & relation).",
+          "answer": "V \u221d T at constant P and n (V1/T1 = V2/T2), T in Kelvin."
+        },
+        {
+          "value": 300,
+          "clue": "Gay-Lussac\u2019s law (variables & relation).",
+          "answer": "P \u221d T at constant V and n (P1/T1 = P2/T2), T in Kelvin."
+        },
+        {
+          "value": 400,
+          "clue": "Avogadro\u2019s law (variables & relation).",
+          "answer": "V \u221d n at constant P and T."
+        },
+        {
+          "value": 500,
+          "clue": "Combined gas law\u2014write it.",
+          "answer": "P1V1/T1 = P2V2/T2 (n constant)."
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Synthesis",
+    "clue": "You\u2019re preparing volatile anesthetic delivery. Name TWO concepts\u2014one from equilibrium/thermo and one from gas laws\u2014that directly determine delivered concentration to the patient.",
+    "answer": "Thermo/Equilibrium: vapor\u2013liquid equilibrium (Keq, \u0394G). Gas laws: PV=nRT relations (T and P affecting vapor). Together they set partial pressures in the circuit."
+  }
+}

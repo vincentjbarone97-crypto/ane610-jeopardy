@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 \u2013 Module 3 (Lecture 3) Jeopardy",
+  "categories": [
+    {
+      "name": "Thermodynamics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "First Law of Thermodynamics in one line.",
+          "answer": "Energy is neither created nor destroyed; only converted."
+        },
+        {
+          "value": 200,
+          "clue": "Exothermic \u0394H sign? Endothermic \u0394H sign?",
+          "answer": "Exothermic: \u0394H < 0; Endothermic: \u0394H > 0."
+        },
+        {
+          "value": 300,
+          "clue": "Define entropy (S).",
+          "answer": "Measure of disorder/randomness of a system."
+        },
+        {
+          "value": 400,
+          "clue": "Spontaneity and \u0394G\u2014state the rule.",
+          "answer": "\u0394G < 0 \u2192 spontaneous; \u0394G > 0 \u2192 nonspontaneous."
+        },
+        {
+          "value": 500,
+          "clue": "Calculate spontaneity: \u0394H = \u221211.5 kJ, \u0394S = +22 J/mol\u00b7K at 298 K.",
+          "answer": "\u0394G = \u0394H \u2212 T\u0394S \u2248 \u221211.5 kJ \u2212 (0.022 kJ/K\u00d7298 K) \u2248 \u221218.1 kJ \u2192 spontaneous."
+        }
+      ]
+    },
+    {
+      "name": "Kinetics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define activation energy.",
+          "answer": "Minimum energy required for a reaction to proceed."
+        },
+        {
+          "value": 200,
+          "clue": "Two factors that increase rate by collision theory.",
+          "answer": "Higher temperature and higher concentration (more frequent/energetic collisions)."
+        },
+        {
+          "value": 300,
+          "clue": "Name one structural factor that speeds reactions.",
+          "answer": "Oppositely charged ions react faster (lower activation barrier)."
+        },
+        {
+          "value": 400,
+          "clue": "Catalysts affect which aspect of a reaction energy profile?",
+          "answer": "Lower the activation energy (alternative pathway)."
+        },
+        {
+          "value": 500,
+          "clue": "What is a transition state?",
+          "answer": "High-energy, unstable arrangement of atoms (activated complex) at the peak of the energy barrier."
+        }
+      ]
+    },
+    {
+      "name": "Equilibrium",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "At equilibrium, what relation holds for forward and reverse rates?",
+          "answer": "Rates are equal; concentrations remain constant."
+        },
+        {
+          "value": 200,
+          "clue": "If Keq > 1 at given T, which side is favored?",
+          "answer": "Products are favored."
+        },
+        {
+          "value": 300,
+          "clue": "Sevoflurane(l) \u21cc Sevoflurane(g) at 25 \u00b0C with Keq > 1 implies what?",
+          "answer": "More vapor (gas) than liquid at equilibrium under those conditions."
+        },
+        {
+          "value": 400,
+          "clue": "True/False: Equilibrium means [R] = [P].",
+          "answer": "False; it means rates equal, not necessarily concentrations."
+        },
+        {
+          "value": 500,
+          "clue": "Write the standard free energy relation to Keq (symbolically).",
+          "answer": "\u0394G\u00b0 = \u2212RT ln Keq."
+        }
+      ]
+    },
+    {
+      "name": "Acids & Bases",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Bronsted\u2013Lowry acid vs base?",
+          "answer": "Acid donates H+; Base accepts H+."
+        },
+        {
+          "value": 200,
+          "clue": "Define a strong acid.",
+          "answer": "Completely dissociates into ions in water."
+        },
+        {
+          "value": 300,
+          "clue": "In water at 25 \u00b0C, what is Kw?",
+          "answer": "1.0 \u00d7 10^\u221214 = [H+][OH\u2212]."
+        },
+        {
+          "value": 400,
+          "clue": "pH of solution where [H3O+] = 4.0 \u00d7 10^\u22128 M?",
+          "answer": "pH = \u2212log(4e\u22128) \u2248 7.4."
+        },
+        {
+          "value": 500,
+          "clue": "Buffer definition in one sentence.",
+          "answer": "A solution that resists large pH changes when small amounts of acid or base are added."
+        }
+      ]
+    },
+    {
+      "name": "pH & Calculations",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Calculate pH if [H+] = 1.0 \u00d7 10^\u22123 M.",
+          "answer": "pH = 3.00."
+        },
+        {
+          "value": 200,
+          "clue": "Calculate pOH if [OH\u2212] = 2.0 \u00d7 10^\u22124 M.",
+          "answer": "pOH \u2248 3.70; pH \u2248 10.30."
+        },
+        {
+          "value": 300,
+          "clue": "Strong acid means what about Ka and degree of ionization?",
+          "answer": "Large Ka; essentially complete ionization."
+        },
+        {
+          "value": 400,
+          "clue": "Conjugate acid\u2013base pair example from NH3.",
+          "answer": "NH3/NH4+."
+        },
+        {
+          "value": 500,
+          "clue": "What happens to pH when a buffer\u2019s acid and base components are equal?",
+          "answer": "pH \u2248 pKa (Henderson\u2013Hasselbalch)."
+        }
+      ]
+    },
+    {
+      "name": "Anesthesia Connections",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Functional hemoglobin iron oxidation state name?",
+          "answer": "Ferrous (Fe2+)."
+        },
+        {
+          "value": 200,
+          "clue": "CO2 absorber in circuits typically contains?",
+          "answer": "Sodium hydroxide (NaOH) and calcium oxide (CaO)."
+        },
+        {
+          "value": 300,
+          "clue": "Vaporization relevance to inhaled agents?",
+          "answer": "Liquid anesthetic must vaporize to gas phase for delivery; equilibrium governs vapor concentration."
+        },
+        {
+          "value": 400,
+          "clue": "ABG acidity: if [H+] rises, what happens to pH?",
+          "answer": "pH decreases (becomes more acidic)."
+        },
+        {
+          "value": 500,
+          "clue": "One reason buffers matter during anesthesia.",
+          "answer": "They stabilize patient pH against shifts from ventilation or metabolism."
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Free Energy",
+    "clue": "State the combined enthalpy\u2013entropy criterion for spontaneity and give one clinical example where it matters.",
+    "answer": "\u0394G = \u0394H \u2212 T\u0394S; \u0394G<0 is spontaneous. Example: vapor\u2013liquid balance of volatile anesthetics affects delivered concentration."
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 \u2013 Module 4 (Lecture 4) Jeopardy",
+  "categories": [
+    {
+      "name": "Gas Laws \u2013 Basics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Boyle\u2019s law (variables & relation).",
+          "answer": "P \u221d 1/V at constant T and n (P1V1 = P2V2)."
+        },
+        {
+          "value": 200,
+          "clue": "Charles\u2019s law (variables & relation).",
+          "answer": "V \u221d T at constant P and n (V1/T1 = V2/T2), T in Kelvin."
+        },
+        {
+          "value": 300,
+          "clue": "Gay-Lussac\u2019s law (variables & relation).",
+          "answer": "P \u221d T at constant V and n (P1/T1 = P2/T2), T in Kelvin."
+        },
+        {
+          "value": 400,
+          "clue": "Avogadro\u2019s law (variables & relation).",
+          "answer": "V \u221d n at constant P and T."
+        },
+        {
+          "value": 500,
+          "clue": "Combined gas law\u2014write it.",
+          "answer": "P1V1/T1 = P2V2/T2 (n constant)."
+        }
+      ]
+    },
+    {
+      "name": "Ideal Gas Law",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Write the ideal gas equation.",
+          "answer": "PV = nRT."
+        },
+        {
+          "value": 200,
+          "clue": "Common values of R (give one with units).",
+          "answer": "0.0821 L\u00b7atm/(mol\u00b7K) or 8.314 J/(mol\u00b7K) or 62.4 L\u00b7mmHg/(mol\u00b7K)."
+        },
+        {
+          "value": 300,
+          "clue": "Why do we say 'ideal gas'?",
+          "answer": "Model assumes point particles with elastic collisions, no intermolecular forces."
+        },
+        {
+          "value": 400,
+          "clue": "If P and n are constant, how does V change with T?",
+          "answer": "Directly proportional; V increases as T increases."
+        },
+        {
+          "value": 500,
+          "clue": "At fixed volume, T increases\u2014what happens to P and why?",
+          "answer": "P increases; faster molecules collide more frequently and forcefully with container walls."
+        }
+      ]
+    },
+    {
+      "name": "Clinical Gas Sense",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Which unit must temperature be in for gas law calculations?",
+          "answer": "Kelvin."
+        },
+        {
+          "value": 200,
+          "clue": "If cylinder is cooled without gas loss, what happens to pressure?",
+          "answer": "Pressure decreases (Gay-Lussac)."
+        },
+        {
+          "value": 300,
+          "clue": "If you halve the volume of a gas at constant T, what happens to pressure?",
+          "answer": "It doubles (Boyle)."
+        },
+        {
+          "value": 400,
+          "clue": "If you double moles at constant P and T, what happens to volume?",
+          "answer": "It doubles (Avogadro)."
+        },
+        {
+          "value": 500,
+          "clue": "Name one reason ideal gas assumptions break down clinically.",
+          "answer": "High pressures/low temperatures cause non-ideal behavior (intermolecular forces, finite volume)."
+        }
+      ]
+    },
+    {
+      "name": "Mix & Review",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Define a mole in one sentence.",
+          "answer": "Amount of substance containing Avogadro\u2019s number of particles (6.022\u00d710^23)."
+        },
+        {
+          "value": 200,
+          "clue": "Empirical formula of C6H12O6.",
+          "answer": "CH2O."
+        },
+        {
+          "value": 300,
+          "clue": "Strong acid definition.",
+          "answer": "Completely dissociates in water."
+        },
+        {
+          "value": 400,
+          "clue": "Equilibrium at the molecular level means what?",
+          "answer": "Forward and reverse reaction rates are equal."
+        },
+        {
+          "value": 500,
+          "clue": "Activation energy is what?",
+          "answer": "Minimum energy required to initiate a reaction."
+        }
+      ]
+    },
+    {
+      "name": "Numbers & Notation",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Convert 25 \u00b0C to Kelvin.",
+          "answer": "298 K."
+        },
+        {
+          "value": 200,
+          "clue": "log10(1\u00d710^\u22124) equals what?",
+          "answer": "\u22124."
+        },
+        {
+          "value": 300,
+          "clue": "If [H+] = 1\u00d710^\u22129, pH = ?",
+          "answer": "9.00."
+        },
+        {
+          "value": 400,
+          "clue": "If [OH\u2212] = 5\u00d710^\u22125, compute pOH (2 sig figs).",
+          "answer": "pOH \u2248 4.30 (exact 4.301)."
+        },
+        {
+          "value": 500,
+          "clue": "Kw at 25 \u00b0C equals?",
+          "answer": "1.0 \u00d7 10^\u221214."
+        }
+      ]
+    },
+    {
+      "name": "Final Checks",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "State variable not in ideal gas law directly.",
+          "answer": "Mass (though related via n = m/M)."
+        },
+        {
+          "value": 200,
+          "clue": "Why do we ignore intermolecular attractions in ideal gas model?",
+          "answer": "Assumption simplifies; works well at low P and high T."
+        },
+        {
+          "value": 300,
+          "clue": "Which increases collision frequency: \u2191T or \u2193V (at constant n)?",
+          "answer": "Both: \u2191T (faster), \u2193V (more crowded)."
+        },
+        {
+          "value": 400,
+          "clue": "Doubling T in Kelvin at constant V does what to P?",
+          "answer": "Doubles P (Gay-Lussac)."
+        },
+        {
+          "value": 500,
+          "clue": "State the combined gas law constraint on n.",
+          "answer": "n must be constant (closed system, no gas added/removed)."
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Gas Sense",
+    "clue": "Cylinder at 300 K and 2000 psi is moved to 240 K with no gas loss. Approximate new pressure (assume ideal, constant V).",
+    "answer": "P2 \u2248 P1\u00d7(T2/T1) = 2000\u00d7(240/300) \u2248 1600 psi."
+  }
+}
