@@ -1,0 +1,190 @@
+{
+  "title": "ANE610 Exam 1 Review \u2013 Jeopardy",
+  "categories": [
+    {
+      "name": "Atomic & Molecular Basics",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "How many total electrons does oxygen have in its ground state?",
+          "answer": "8"
+        },
+        {
+          "value": 200,
+          "clue": "How many valence electrons does nitrogen have?",
+          "answer": "5"
+        },
+        {
+          "value": 300,
+          "clue": "What is the atomic number of nitrogen?",
+          "answer": "7"
+        },
+        {
+          "value": 400,
+          "clue": "What is an anion?",
+          "answer": "An atom that has gained electrons and has a negative charge"
+        },
+        {
+          "value": 500,
+          "clue": "Define isotopes.",
+          "answer": "Atoms of the same element with the same number of protons but different number of neutrons"
+        }
+      ]
+    },
+    {
+      "name": "Chemical Equations & Solutions",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "The Law of Conservation of Mass states what?",
+          "answer": "Matter cannot be either gained or lost in a chemical reaction"
+        },
+        {
+          "value": 200,
+          "clue": "Name N2O.",
+          "answer": "Dinitrogen monoxide"
+        },
+        {
+          "value": 300,
+          "clue": "Balance: 6CO2 + 6H2O \u2192 ?",
+          "answer": "C6H12O6 + 6O2"
+        },
+        {
+          "value": 400,
+          "clue": "Define molality.",
+          "answer": "Moles of solute per kg of solvent"
+        },
+        {
+          "value": 500,
+          "clue": "A 15% (w/v) KCl solution contains how many grams KCl in 1L?",
+          "answer": "150 g"
+        }
+      ]
+    },
+    {
+      "name": "Thermodynamics & Equilibrium",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "First Law of Thermodynamics?",
+          "answer": "Energy cannot be created or destroyed, only converted"
+        },
+        {
+          "value": 200,
+          "clue": "Second Law of Thermodynamics?",
+          "answer": "The universe tends toward increasing entropy (disorder)"
+        },
+        {
+          "value": 300,
+          "clue": "Equation for Gibbs Free Energy?",
+          "answer": "\u0394G = \u0394H - T\u0394S"
+        },
+        {
+          "value": 400,
+          "clue": "A reaction has \u0394G = -65 kJ/mol. Spontaneous?",
+          "answer": "Yes"
+        },
+        {
+          "value": 500,
+          "clue": "At equilibrium, what is true about forward and reverse reaction rates?",
+          "answer": "They are equal; no net change in concentrations"
+        }
+      ]
+    },
+    {
+      "name": "Acids, Bases & Buffers",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Arrhenius definition of an acid?",
+          "answer": "Produces H+ ions in water"
+        },
+        {
+          "value": 200,
+          "clue": "Bronsted-Lowry base definition?",
+          "answer": "Proton (H+) acceptor"
+        },
+        {
+          "value": 300,
+          "clue": "Definition of a strong acid.",
+          "answer": "Completely dissociates into ions in water"
+        },
+        {
+          "value": 400,
+          "clue": "Buffer definition.",
+          "answer": "Resists large changes in pH when acids or bases are added"
+        },
+        {
+          "value": 500,
+          "clue": "Calculate pH: [OH-] = 2 \u00d7 10^-4 M.",
+          "answer": "pH \u2248 10.3"
+        }
+      ]
+    },
+    {
+      "name": "Gas Laws & States of Matter",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "Boyle\u2019s Law relates what two variables?",
+          "answer": "Pressure and volume (inversely proportional)"
+        },
+        {
+          "value": 200,
+          "clue": "Charles\u2019 Law relates what two variables?",
+          "answer": "Volume and temperature (directly proportional)"
+        },
+        {
+          "value": 300,
+          "clue": "Gay-Lussac\u2019s Law relates what two variables?",
+          "answer": "Pressure and temperature"
+        },
+        {
+          "value": 400,
+          "clue": "Avogadro\u2019s Law states volume is proportional to what?",
+          "answer": "The number of moles of gas"
+        },
+        {
+          "value": 500,
+          "clue": "Ideal gas law equation?",
+          "answer": "PV = nRT"
+        }
+      ]
+    },
+    {
+      "name": "Anesthesia Applications",
+      "clues": [
+        {
+          "value": 100,
+          "clue": "What is the oxidation state of iron in functional hemoglobin?",
+          "answer": "Fe2+ (ferrous)"
+        },
+        {
+          "value": 200,
+          "clue": "Vaporization of sevoflurane at 25 \u00b0C has Keq >1. What does this mean?",
+          "answer": "More gas than liquid at equilibrium"
+        },
+        {
+          "value": 300,
+          "clue": "ABG shows [H3O+] = 4 \u00d7 10^-8 M. pH?",
+          "answer": "7.4"
+        },
+        {
+          "value": 400,
+          "clue": "Which anesthetic process requires understanding of gas solubility and vaporization?",
+          "answer": "Inhalation anesthesia"
+        },
+        {
+          "value": 500,
+          "clue": "CO2 absorber in anesthesia circuit uses which compounds?",
+          "answer": "NaOH and CaO reacting with CO2, releasing heat and water"
+        }
+      ]
+    }
+  ],
+  "finalJeopardy": {
+    "category": "Reaction Spontaneity",
+    "clue": "A reaction has \u0394H = -11.5 kJ and \u0394S = +22 J/mol\u00b7K at 298 K. Is it spontaneous?",
+    "answer": "Yes, because enthalpy is negative and entropy is positive \u2192 \u0394G < 0"
+  }
+}

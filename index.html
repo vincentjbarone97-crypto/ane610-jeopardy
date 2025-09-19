@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeopardy Study Game — Standalone</title>
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel:#0f172a;
+      --muted:#94a3b8;
+      --border:#1e293b;
+      --accent:#2563eb;
+      --good:#16a34a;
+      --bad:#dc2626;
+      --tile:#1d4ed8;
+      --tile-dd:#7e22ce;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #fff;
+    }
+    .wrap{max-width:1200px;margin:0 auto;padding:20px}
+    h1{margin:0 0 6px 0;font-size:28px}
+    .sub{color:var(--muted);font-size:14px;margin-bottom:16px}
+    .bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    button{
+      background: var(--panel);
+      color:#fff;border:1px solid var(--border);
+      padding:10px 14px;border-radius:12px;cursor:pointer
+    }
+    button:hover{background:#182033}
+    .teams{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+    .card{background:var(--panel);border:1px solid var(--border);padding:12px;border-radius:14px}
+    .muted{color:var(--muted);font-size:12px}
+    .score{font-weight:900;font-size:24px}
+    .board{overflow:auto}
+    .grid{display:grid;min-width:900px;gap:8px}
+    .col{display:flex;flex-direction:column;gap:8px}
+    .cat{position:sticky;top:0;background:var(--panel);border:1px solid var(--border);padding:10px;border-radius:12px;text-align:center;font-weight:800;text-transform:uppercase}
+    .tile{
+      display:flex;align-items:center;justify-content:center;
+      height:90px;border-radius:12px;border:1px solid var(--border);
+      background: color-mix(in oklab, var(--tile) 65%, #000);
+      color:#fff;font-weight:900;font-size:32px;cursor:pointer;
+    }
+    .tile.dd{background: color-mix(in oklab, var(--tile-dd) 65%, #000)}
+    .tile.used{background:#0b1220;color:#334155;cursor:not-allowed}
+    .modal{
+      position:fixed;inset:0;background:rgba(0,0,0,.6);
+      display:flex;align-items:center;justify-content:center;padding:16px
+    }
+    .panel{max-width:800px;width:100%;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}
+    .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+    .btn{background:var(--panel);border:1px solid var(--border);padding:8px 10px;border-radius:10px}
+    .btn.primary{background: color-mix(in oklab, var(--accent) 45%, #000)}
+    .btn.good{background: color-mix(in oklab, var(--good) 60%, #000)}
+    .btn.bad{background: color-mix(in oklab, var(--bad) 60%, #000)}
+    .mt{margin-top:12px}
+    input,select{background:#0b1220;border:1px solid var(--border);color:#fff;border-radius:10px;padding:8px}
+    .finalBox{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .small{font-size:12px;color:var(--muted)}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="title">Jeopardy Study Game</h1>
+    <div class="sub">Standalone HTML version • Load your JSON and play</div>
+    <div class="bar">
+      <button id="loadBtn">Load Questions (JSON)</button>
+      <input type="file" id="file" accept="application/json" hidden />
+      <button id="resetBtn">Reset</button>
+      <button id="finalBtn" class="hidden">Play Final Jeopardy</button>
+      <span class="small" id="status"></span>
+    </div>
+
+    <div class="teams" id="teams"></div>
+
+    <div class="card">
+      <div class="muted">Setup</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <label>Teams:
+          <select id="teamCount">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option>
+          </select>
+        </label>
+        <span class="small">Edit names below, then click <b>Reset</b> to apply.</span>
+      </div>
+    </div>
+
+    <div class="board mt">
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="panel">
+      <div class="row">
+        <div>
+          <div class="small" id="mCat"></div>
+          <div style="font-weight:900;font-size:22px" id="mValue"></div>
+        </div>
+        <button class="btn" id="close">Close</button>
+      </div>
+      <div class="mt" id="mBody" style="font-size:18px;line-height:1.5"></div>
+      <div class="mt" id="wagerRow" class="hidden">
+        <div class="small">Daily Double — enter wager for <span id="teamName"></span>:</div>
+        <input type="number" id="wagerInput" min="0" value="0" />
+        <button class="btn primary" id="lockWager">Lock Wager</button>
+      </div>
+      <div class="mt" id="actions"></div>
+      <div class="small mt" id="turnInfo"></div>
+    </div>
+  </div>
+
+  <div class="wrap hidden" id="finalPanel">
+    <div class="card">
+      <div class="row">
+        <div>
+          <div class="small">Final Jeopardy Category</div>
+          <div style="font-weight:900;font-size:22px" id="fjCat">Final Round</div>
+        </div>
+        <div>
+          <button class="btn" id="revealClue">Reveal Clue</button>
+          <button class="btn" id="revealAnswer">Reveal Answer</button>
+        </div>
+      </div>
+      <div class="mt" id="fjText" style="font-size:18px;line-height:1.5;color:#e2e8f0">Press "Reveal Clue" when ready.</div>
+      <div class="finalBox mt" id="fjBox"></div>
+    </div>
+  </div>
+
+<script>
+// ===== Sample fallback data =====
+const SAMPLE = {
+  "title": "ANE610 Exam 1 Review – Jeopardy",
+  "categories": [
+    {"name":"Atomic & Molecular Basics","clues":[
+      {"value":100,"clue":"How many total electrons does oxygen have in its ground state?","answer":"8"},
+      {"value":200,"clue":"How many valence electrons does nitrogen have?","answer":"5"},
+      {"value":300,"clue":"What is the atomic number of nitrogen?","answer":"7"},
+      {"value":400,"clue":"What is an anion?","answer":"An atom that has gained electrons and has a negative charge"},
+      {"value":500,"clue":"Define isotopes.","answer":"Atoms of the same element with the same number of protons but different number of neutrons"}
+    ]},
+    {"name":"Chemical Equations & Solutions","clues":[
+      {"value":100,"clue":"The Law of Conservation of Mass states what?","answer":"Matter cannot be either gained or lost in a chemical reaction"},
+      {"value":200,"clue":"Name N2O.","answer":"Dinitrogen monoxide"},
+      {"value":300,"clue":"Balance: 6CO2 + 6H2O → ?","answer":"C6H12O6 + 6O2"},
+      {"value":400,"clue":"Define molality.","answer":"Moles of solute per kg of solvent"},
+      {"value":500,"clue":"A 15% (w/v) KCl solution contains how many grams KCl in 1L?","answer":"150 g"}
+    ]},
+    {"name":"Thermodynamics & Equilibrium","clues":[
+      {"value":100,"clue":"First Law of Thermodynamics?","answer":"Energy cannot be created or destroyed, only converted"},
+      {"value":200,"clue":"Second Law of Thermodynamics?","answer":"The universe tends toward increasing entropy (disorder)"},
+      {"value":300,"clue":"Equation for Gibbs Free Energy?","answer":"ΔG = ΔH - TΔS"},
+      {"value":400,"clue":"A reaction has ΔG = -65 kJ/mol. Spontaneous?","answer":"Yes"},
+      {"value":500,"clue":"At equilibrium, what is true about forward and reverse reaction rates?","answer":"They are equal; no net change in concentrations"}
+    ]},
+    {"name":"Acids, Bases & Buffers","clues":[
+      {"value":100,"clue":"Arrhenius definition of an acid?","answer":"Produces H+ ions in water"},
+      {"value":200,"clue":"Bronsted-Lowry base definition?","answer":"Proton (H+) acceptor"},
+      {"value":300,"clue":"Definition of a strong acid.","answer":"Completely dissociates into ions in water"},
+      {"value":400,"clue":"Buffer definition.","answer":"Resists large changes in pH when acids or bases are added"},
+      {"value":500,"clue":"Calculate pH: [OH-] = 2 × 10^-4 M.","answer":"pH ≈ 10.3"}
+    ]},
+    {"name":"Gas Laws & States of Matter","clues":[
+      {"value":100,"clue":"Boyle’s Law relates what two variables?","answer":"Pressure and volume (inversely proportional)"},
+      {"value":200,"clue":"Charles’ Law relates what two variables?","answer":"Volume and temperature (directly proportional)"},
+      {"value":300,"clue":"Gay-Lussac’s Law relates what two variables?","answer":"Pressure and temperature"},
+      {"value":400,"clue":"Avogadro’s Law states volume is proportional to what?","answer":"The number of moles of gas"},
+      {"value":500,"clue":"Ideal gas law equation?","answer":"PV = nRT"}
+    ]},
+    {"name":"Anesthesia Applications","clues":[
+      {"value":100,"clue":"What is the oxidation state of iron in functional hemoglobin?","answer":"Fe2+ (ferrous)"},
+      {"value":200,"clue":"Vaporization of sevoflurane at 25 °C has Keq >1. What does this mean?","answer":"More gas than liquid at equilibrium"},
+      {"value":300,"clue":"ABG shows [H3O+] = 4 × 10^-8 M. pH?","answer":"7.4"},
+      {"value":400,"clue":"Which anesthetic process requires understanding of gas solubility and vaporization?","answer":"Inhalation anesthesia"},
+      {"value":500,"clue":"CO2 absorber in anesthesia circuit uses which compounds?","answer":"NaOH and CaO reacting with CO2, releasing heat and water"}
+    ]}
+  ],
+  "finalJeopardy": {
+    "category":"Reaction Spontaneity",
+    "clue":"A reaction has ΔH = -11.5 kJ and ΔS = +22 J/mol·K at 298 K. Is it spontaneous?",
+    "answer":"Yes, because enthalpy is negative and entropy is positive → ΔG < 0"
+  }
+};
+
+// ===== App state =====
+let data = structuredClone(SAMPLE);
+let board = []; // per tile: {value, status, dd}
+let teamCount = 2;
+let teams = [
+  {name:"Team 1", score:0, wager:0},
+  {name:"Team 2", score:0, wager:0},
+  {name:"Team 3", score:0, wager:0},
+  {name:"Team 4", score:0, wager:0},
+];
+let currentTeam = 0;
+let active = null; // {ci, qi}
+let showAnswer = false;
+let ddPhase = false;
+let ddWager = 0;
+let boardCleared = false;
+let finalMode = false;
+let fjRevealed = {clue:false, answer:false};
+
+function initBoard(){
+  const cats = data.categories || [];
+  const total = cats.reduce((s,c)=> s + (c.clues?.length||0), 0);
+  const ddCount = Math.max(1, Math.round(total/15));
+  const ddSet = new Set();
+  while(ddSet.size < ddCount) ddSet.add(Math.floor(Math.random()*total));
+  let i=0;
+  board = cats.map(cat => (cat.clues||[]).map(c => ({
+    value: Number(c.value)||0,
+    status: "available",
+    dd: ddSet.has(i++)
+  })));
+  render();
+}
+
+function render(){
+  // Title
+  document.getElementById("title").textContent = data.title || "Jeopardy Study Game";
+
+  // Teams
+  const tWrap = document.getElementById("teams");
+  tWrap.innerHTML = "";
+  for(let i=0;i<teamCount;i++){
+    const t = teams[i];
+    const card = document.createElement("div");
+    card.className = "card";
+    const border = (i===currentTeam) ? "style='border-color:#34d399;'" : "";
+    card.innerHTML = `
+      <div class="muted">Team</div>
+      <input value="${t.name}" data-idx="${i}" class="teamName" />
+      <div class="score">${t.score}</div>`;
+    tWrap.appendChild(card);
+  }
+  tWrap.querySelectorAll(".teamName").forEach(inp=>{
+    inp.addEventListener("input", (e)=>{
+      const idx = Number(e.target.dataset.idx);
+      teams[idx].name = e.target.value;
+    })
+  });
+
+  // Grid
+  const grid = document.getElementById("grid");
+  grid.style.gridTemplateColumns = `repeat(${data.categories?.length||0}, minmax(0,1fr))`;
+  grid.innerHTML = "";
+  (data.categories||[]).forEach((cat,ci)=>{
+    const col = document.createElement("div");
+    col.className = "col";
+    const c = document.createElement("div");
+    c.className = "cat";
+    c.textContent = cat.name;
+    col.appendChild(c);
+    (cat.clues||[]).forEach((q,qi)=>{
+      const tile = document.createElement("button");
+      const t = board[ci]?.[qi];
+      const used = !t || t.status!=="available";
+      tile.className = "tile" + (t?.dd ? " dd":"") + (used? " used": "");
+      tile.textContent = t?.value ?? "";
+      tile.disabled = used;
+      tile.addEventListener("click", ()=>openTile(ci,qi));
+      col.appendChild(tile);
+    });
+    grid.appendChild(col);
+  });
+
+  // Board cleared?
+  boardCleared = !board.flat().some(t => t && t.status==="available");
+  document.getElementById("finalBtn").classList.toggle("hidden", !(boardCleared && !finalMode));
+}
+
+function openTile(ci, qi){
+  const t = board[ci][qi];
+  if(!t || t.status!=="available") return;
+  active = {ci, qi};
+  showAnswer = false;
+  ddPhase = !!t.dd;
+  ddWager = 0;
+  t.status = "revealed";
+  // Modal content
+  const cat = data.categories[ci];
+  const clue = cat.clues[qi];
+  document.getElementById("mCat").textContent = cat.name;
+  document.getElementById("mValue").textContent = t.dd ? "Daily Double" : "$"+t.value;
+  document.getElementById("turnInfo").textContent = "Current team: " + teams[currentTeam].name;
+  const body = document.getElementById("mBody");
+  body.textContent = clue.clue;
+  const actions = document.getElementById("actions");
+  actions.innerHTML = "";
+  document.getElementById("wagerRow").classList.toggle("hidden", !ddPhase);
+  document.getElementById("teamName").textContent = teams[currentTeam].name;
+  document.getElementById("wagerInput").value = 0;
+
+  if(!ddPhase){
+    const showBtn = btn("Show Answer", ()=>{
+      body.textContent = clue.answer;
+      actions.innerHTML = "";
+      actions.appendChild(btn("Correct", ()=>resolve(true), "good"));
+      actions.appendChild(btn("Incorrect", ()=>resolve(false), "bad"));
+    });
+    actions.appendChild(showBtn);
+  }
+
+  document.getElementById("modal").classList.remove("hidden");
+  render();
+}
+
+function btn(label, fn, variant){
+  const b = document.createElement("button");
+  b.className = "btn" + (variant ? " "+variant : "");
+  b.textContent = label;
+  b.addEventListener("click", fn);
+  return b;
+}
+
+function closeModal(){
+  if(!active){document.getElementById("modal").classList.add("hidden");return;}
+  const {ci,qi} = active;
+  const t = board[ci][qi];
+  if(t.status!=="done") t.status="available";
+  active = null;
+  ddPhase=false; ddWager=0;
+  document.getElementById("modal").classList.add("hidden");
+  render();
+}
+
+function lockWager(){
+  const w = Number(document.getElementById("wagerInput").value)||0;
+  ddWager = Math.max(0, w);
+  // Replace body with clue + answer flow
+  const {ci,qi} = active;
+  const cat = data.categories[ci];
+  const clue = cat.clues[qi];
+  const body = document.getElementById("mBody");
+  const actions = document.getElementById("actions");
+  body.textContent = clue.clue;
+  actions.innerHTML = "";
+  actions.appendChild(btn("Show Answer", ()=>{
+    body.textContent = clue.answer;
+    actions.innerHTML = "";
+    actions.appendChild(btn("Correct", ()=>resolve(true), "good"));
+    actions.appendChild(btn("Incorrect", ()=>resolve(false), "bad"));
+  }));
+  document.getElementById("wagerRow").classList.add("hidden");
+}
+
+function resolve(ok){
+  const {ci,qi} = active;
+  const t = board[ci][qi];
+  const delta = t.dd ? ddWager : t.value;
+  teams[currentTeam].score += ok ? delta : -delta;
+  t.status="done";
+  active=null; ddPhase=false; ddWager=0;
+  document.getElementById("modal").classList.add("hidden");
+  // advance team
+  currentTeam = (currentTeam + 1) % teamCount;
+  render();
+}
+
+// Final Jeopardy
+function startFinal(){
+  finalMode = true;
+  document.getElementById("finalPanel").classList.remove("hidden");
+  document.getElementById("fjCat").textContent = data.finalJeopardy?.category || "Final Round";
+  document.getElementById("fjText").textContent = 'Press "Reveal Clue" when ready.';
+  fjRevealed = {clue:false, answer:false};
+  const box = document.getElementById("fjBox");
+  box.innerHTML = "";
+  for(let i=0;i<teamCount;i++){
+    const t = teams[i];
+    const c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML = `
+      <div style="font-weight:600">${t.name}</div>
+      <div class="small">Enter wager, then mark result</div>
+      <input type="number" min="0" value="${t.wager||0}" data-i="${i}" class="wInp" />
+      <div class="bar" style="margin-top:8px">
+        <button class="btn good" data-i="${i}" data-ok="1">Correct</button>
+        <button class="btn bad" data-i="${i}" data-ok="0">Incorrect</button>
+      </div>`;
+    box.appendChild(c);
+  }
+  box.querySelectorAll(".wInp").forEach(inp=>{
+    inp.addEventListener("input",(e)=>{
+      const i = Number(e.target.dataset.i);
+      teams[i].wager = Number(e.target.value)||0;
+    })
+  });
+  box.querySelectorAll("button[data-i]").forEach(b=>{
+    b.addEventListener("click",(e)=>{
+      const i = Number(e.target.dataset.i);
+      const ok = e.target.dataset.ok==="1";
+      const w = Number(teams[i].wager)||0;
+      teams[i].score += ok ? w : -w;
+      render();
+    })
+  });
+  render();
+}
+
+function revealClue(){
+  document.getElementById("fjText").textContent = data.finalJeopardy?.clue || "(No Final Jeopardy clue provided)";
+}
+function revealAnswer(){
+  document.getElementById("fjText").textContent = "Answer: " + (data.finalJeopardy?.answer || "(No answer provided)");
+}
+
+// ===== Handlers =====
+document.getElementById("loadBtn").addEventListener("click", ()=> document.getElementById("file").click());
+document.getElementById("file").addEventListener("change", async (e)=>{
+  const f = e.target.files?.[0];
+  if(!f){return;}
+  try{
+    const text = await f.text();
+    const json = JSON.parse(text);
+    data = json;
+    document.getElementById("status").textContent = "Loaded: " + (f.name || "questions.json");
+    initBoard();
+  }catch(err){
+    alert("Invalid JSON file.");
+  }
+});
+document.getElementById("resetBtn").addEventListener("click", ()=>{
+  teamCount = Number(document.getElementById("teamCount").value)||2;
+  teams = Array.from({length:4}).map((_,i)=> ({
+    name: document.querySelectorAll(".teamName")[i]?.value || `Team ${i+1}`,
+    score: 0,
+    wager: 0
+  }));
+  currentTeam = 0;
+  active=null; ddPhase=false; ddWager=0; finalMode=false;
+  document.getElementById("finalPanel").classList.add("hidden");
+  initBoard();
+});
+document.getElementById("finalBtn").addEventListener("click", startFinal);
+document.getElementById("revealClue").addEventListener("click", revealClue);
+document.getElementById("revealAnswer").addEventListener("click", revealAnswer);
+document.getElementById("close").addEventListener("click", closeModal);
+document.getElementById("lockWager").addEventListener("click", lockWager);
+
+// Init
+initBoard();
+</script>
+</body>
+</html>
